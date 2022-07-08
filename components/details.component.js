@@ -20,6 +20,8 @@ export const DetailsScreen = ({ navigation }) => {
   return (
     <SafeAreaView style={{ flex: 1 }}>
       <TopNavigation title='details' alignment='center' accessoryLeft={BackAction}/>
+      <Divider/>
+      <Layout style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
         
         <WebView source={{ uri: 'https://ombi.zakariao.nl/' }} />
       </Layout>
