@@ -15,6 +15,11 @@ jobs:
           node-version: 12.x
       - name: Install Packages
         run: npm install
+      - name: Typecheck
+        run: npx --no-install tsc --noEmit
+      
+      - name: Test
+        run: node -v
   deploy_prod:
     name: Deploy To Production
     needs: test
