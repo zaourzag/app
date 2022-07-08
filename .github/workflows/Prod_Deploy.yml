@@ -5,22 +5,7 @@ on:
       - "prod-[1-9]+.[0-9]+.[0-9]+" # Push events to matching prod-*, i.e.prod-20.15.10
 
 jobs:
-  test:
-    name: Lint & Test
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v1
-        with:
-          node-version: 12.x
-      - name: Install Packages
-        run: npm install
-      - name: Typecheck
-        run: npx --no-install tsc --noEmit
-      - name: Check Lint
-        run: npm run lint
-      - name: Test
-        run: npm run test
+      
   deploy_prod:
     name: Deploy To Production
     needs: test
