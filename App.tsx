@@ -9,6 +9,13 @@ import * as React from 'react';
 import { ApplicationProvider, IconRegistry, Layout,Icon, Text } from '@ui-kitten/components';
 import { EvaIconsPack } from '@ui-kitten/eva-icons';
 import { BottomNavigation } from 'react-native-paper';
+import * as Sentry from 'sentry-expo';
+Sentry.init({
+  dsn: 'https://d4def41ee78646c8a75adceac3ed654e@o1296783.ingest.sentry.io/6557059',
+  enableInExpoDevelopment: true,
+  debug: true, // If `true`, Sentry will try to print out useful debugging information if something goes wrong with sending the event. Set it to `false` in production
+});
+
 export default function App() {
   const isLoadingComplete = useCachedResources();
   const colorScheme = useColorScheme();
