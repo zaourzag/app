@@ -63,11 +63,21 @@ jobs:
           echo Latest release is ${{ steps.latestBinaryVersion.outputs.version }}
       - name: Expo Publish Channel
         run: expo publish --non-interactive --release-channel=${{ steps.releaseChannel.outputs.releaseChannel }}
+      - name: 🏗 Setup Expo
+        uses: expo/expo-github-action@v7
+        with:
+          expo-version: latest
+          token: ${{ secrets.EXPO_TOKEN }}
   create_release:
     name: Create Release
     needs: deploy_prod
     runs-on: ubuntu-latest
     steps:
+      - name: 🏗 Setup Expo
+        uses: expo/expo-github-action@v7
+        with:
+          expo-version: latest
+          token: ${{ secrets.EXPO_TOKEN }}
       - uses: actions/checkout@v2
       - uses: rlespinasse/github-slug-action@v2.x
       - name: Generate Changelog
