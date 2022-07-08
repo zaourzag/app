@@ -3,12 +3,14 @@ node_modules/
 dist/
 npm-debug.*
 *.jks
+.env
 *.p8
 *.p12
 *.key
 *.mobileprovision
 *.orig.*
 web-build/
-
+google-services.json 
+#DO NOT COMMIT GOOGLE STUFF!!!
 # macOS
 .DS_Store
