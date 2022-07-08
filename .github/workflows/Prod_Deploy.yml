@@ -5,7 +5,7 @@ on:
       - "prod-[1-9]+.[0-9]+.[0-9]+" # Push events to matching prod-*, i.e.prod-20.15.10
 
 jobs:
-   publish:
+  publish:
     runs-on: ubuntu-latest
     steps:
       - name: 🏗 Setup repo
@@ -28,7 +28,7 @@ jobs:
 
       - name: 🚀 Publish app
         run: expo publish --non-interactive
-   deploy_prod:
+  deploy_prod:
     name: Deploy To Production
 
     runs-on: ubuntu-latest
@@ -77,7 +77,7 @@ jobs:
           echo Latest release is ${{ steps.latestBinaryVersion.outputs.version }}
       - name: Expo Publish Channel
         run: expo publish --non-interactive --release-channel=${{ steps.releaseChannel.outputs.releaseChannel }}
-   create_release:
+  create_release:
     name: Create Release
     needs: deploy_prod
     runs-on: ubuntu-latest
@@ -104,7 +104,7 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
           name: Release ${{ env.GITHUB_REF_SLUG }}
           allowUpdates: true
-   build_android:
+  build_android:
     needs: [deploy_prod, create_release]
     runs-on: ubuntu-latest
     steps:
@@ -141,7 +141,7 @@ jobs:
       - name: Upload Release Asset
         uses: svenstaro/upload-release-action@v2
         with:
-          repo_token: ${{ secrets.GH_TOKEN }}
+          repo_token: ${{ secrets.GITHUB_TOKEN }}
           file: ./example-${{ env.GITHUB_REF_SLUG }}.apk
           asset_name: example-${{ env.GITHUB_REF_SLUG }}.apk
           tag: ${{ github.ref }}
