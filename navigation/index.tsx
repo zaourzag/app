@@ -16,7 +16,7 @@ const UsersScreen = () => (
 
 const OrdersScreen = () => (
   <Layout style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-    <Text category='h1'>ORDERS</Text>
+    <Text category='h1'>ombi client</Text>
   </Layout>
 );
 
