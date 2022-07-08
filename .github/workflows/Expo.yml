@@ -37,6 +37,11 @@ jobs:
       - uses: actions/checkout@v2
         with:
           ref: ${{ github.head_ref }}
+      - name: 🏗 Setup Expo
+        uses: expo/expo-github-action@v7
+        with:
+          expo-version: latest
+          token: ${{ secrets.EXPO_TOKEN }}
       - name: Fetch Tags
         run: |
           git fetch --prune --unshallow --tags -f
@@ -75,6 +80,11 @@ jobs:
     needs: deploy_prod
     runs-on: ubuntu-latest
     steps:
+      - name: 🏗 Setup Expo
+        uses: expo/expo-github-action@v7
+        with:
+          expo-version: latest
+          token: ${{ secrets.EXPO_TOKEN }}
       - uses: actions/checkout@v2
       - uses: rlespinasse/github-slug-action@v2.x
       - name: Generate Changelog
