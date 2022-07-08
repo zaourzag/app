@@ -1,8 +1,8 @@
 {
   "expo": {
-    "name": "nl.zakariao.ombi",
+    "name": "ombi client zakaria",
     "slug": "nl-zakariao-ombi",
-    "version": "1.0.0",
+    "version": "1.1.0",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
     "scheme": "myapp",
@@ -19,13 +19,15 @@
       "**/*"
     ],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "nl.zakariao.ombi"
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/images/adaptive-icon.png",
         "backgroundColor": "#ffffff"
-      }
+      },
+      "package": "nl.zakariao.ombi"
     },
     "web": {
       "favicon": "./assets/images/favicon.png"
