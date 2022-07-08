@@ -5,23 +5,32 @@ on:
       - "prod-[1-9]+.[0-9]+.[0-9]+" # Push events to matching prod-*, i.e.prod-20.15.10
 
 jobs:
-  test:
-    name: Lint & Test
+   publish:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v1
+      - name: 🏗 Setup repo
+        uses: actions/checkout@v2
+
+      - name: 🏗 Setup Node
+        uses: actions/setup-node@v2
         with:
-          node-version: 12.x
-      - name: Install Packages
-        run: npm install
-      - name: Typecheck
-        run: node -v
-      - name: Check Lint
-     
-  deploy_prod:
+          node-version: 16.x
+          cache: yarn
+
+      - name: 🏗 Setup Expo
+        uses: expo/expo-github-action@v7
+        with:
+          expo-version: latest
+          token: ${{ secrets.EXPO_TOKEN }}
+
+      - name: 📦 Install dependencies
+        run: yarn install
+
+      - name: 🚀 Publish app
+        run: expo publish --non-interactive
+   deploy_prod:
     name: Deploy To Production
-    needs: test
+
     runs-on: ubuntu-latest
     outputs:
       releaseChannel: ${{ steps.releaseChannel.outputs.releaseChannel }}
@@ -30,6 +39,11 @@ jobs:
       - uses: actions/checkout@v2
         with:
           ref: ${{ github.head_ref }}
+      - name: 🏗 Setup Expo
+        uses: expo/expo-github-action@v7
+        with:
+          expo-version: latest
+          token: ${{ secrets.EXPO_TOKEN }}
       - name: Fetch Tags
         run: |
           git fetch --prune --unshallow --tags -f
@@ -63,12 +77,7 @@ jobs:
           echo Latest release is ${{ steps.latestBinaryVersion.outputs.version }}
       - name: Expo Publish Channel
         run: expo publish --non-interactive --release-channel=${{ steps.releaseChannel.outputs.releaseChannel }}
-      - name: 🏗 Setup Expo
-        uses: expo/expo-github-action@v7
-        with:
-          expo-version: latest
-          token: ${{ secrets.EXPO_TOKEN }}
-  create_release:
+   create_release:
     name: Create Release
     needs: deploy_prod
     runs-on: ubuntu-latest
@@ -95,7 +104,7 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
           name: Release ${{ env.GITHUB_REF_SLUG }}
           allowUpdates: true
-  build_android:
+   build_android:
     needs: [deploy_prod, create_release]
     runs-on: ubuntu-latest
     steps:
@@ -109,6 +118,11 @@ jobs:
           expo-cache: true
       - name: Install Packages
         run: npm install
+      - name: 🏗 Setup Expo
+        uses: expo/expo-github-action@v7
+        with:
+          expo-version: latest
+          token: ${{ secrets.EXPO_TOKEN }}
       - name: Build Android Release
         env:
           APP_BUILD_VERSION: ${{ github.run_number }}
@@ -127,7 +141,7 @@ jobs:
       - name: Upload Release Asset
         uses: svenstaro/upload-release-action@v2
         with:
-          repo_token: ${{ secrets.GITHUB_TOKEN }}
+          repo_token: ${{ secrets.GH_TOKEN }}
           file: ./example-${{ env.GITHUB_REF_SLUG }}.apk
           asset_name: example-${{ env.GITHUB_REF_SLUG }}.apk
           tag: ${{ github.ref }}
