@@ -10,7 +10,15 @@ Sentry.init({
   // Set tracesSampleRate to 1.0 to capture 100% of transactions for performance monitoring.
   // We recommend adjusting this value in production.
   enableAutoSessionTracking: true,
+  integrations: [
+    new Sentry.ReactNativeTracing({
+      tracingOrigins: ["localhost", "my-site-url.com", /^\//],
+      // ... other options
+    }),
+  ],
+  sessionTrackingIntervalMillis: 10000,
   tracesSampleRate: 1.0,
+
 });
 export default () => (
   <>
