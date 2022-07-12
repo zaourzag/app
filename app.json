@@ -2,7 +2,7 @@
   "expo": {
     "name": "ombi client zakaria",
     "slug": "nl-zakariao-ombi",
-    "version": "2.0.0",
+    "version": "2.0.1",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
     "scheme": "myapp",
@@ -10,7 +10,7 @@
     "splash": {
       "image": "./assets/images/splash.png",
       "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
+      "backgroundColor": "#7289da"
     },
     "updates": {
       "fallbackToCacheTimeout": 0
@@ -18,10 +18,7 @@
     "assetBundlePatterns": [
       "**/*"
     ],
-    "ios": {
-      "supportsTablet": true,
-      "bundleIdentifier": "nl.zakariao.ombi"
-    },
+  
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/images/adaptive-icon.png",
@@ -30,7 +27,7 @@
      
        "useNextNotificationsApi": true,
        "permissions": ["READ_EXTERNAL_STORAGE", "WRITE_EXTERNAL_STORAGE", "NOTIFICATIONS"],
-       "googleServicesFile": "./google-services.json",
+       
        "package": "nl.zakariao.ombi"
     },
     "hooks": {
@@ -38,7 +35,8 @@
         {
           "file": "sentry-expo/upload-sourcemaps",
           "config": {
-            "organization": "Zakaria Aourzag",
+            "organization": "zakaria-aourzag",
+            "setConmits": true,
             "project": "ombi",
             "authToken": "66a9b6a0b221487babb74d4d2c3c8d2fa42178dbf26a45fda7eb993e9c807b24"
           }
