@@ -136,7 +136,7 @@ jobs:
           echo The android url is $ASSET_URL
           echo "::set-output name=assetUrl::$ASSET_URL"
       - name: Download APK Asset
-        run: wget -O example-${{ env.GITHUB_REF_SLUG }}.apk ${{ steps.androidUrl.outputs.assetUrl }}
+        run: wget -O ombi-${{ env.GITHUB_REF_SLUG }}.apk ${{ steps.androidUrl.outputs.assetUrl }}
       - name: Upload Release Asset
         uses: svenstaro/upload-release-action@v2
         with:
