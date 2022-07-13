@@ -3,15 +3,16 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { BottomNavigation, BottomNavigationTab, Layout, Text } from '@ui-kitten/components';
 import { WebView } from 'react-native-webview';
-import WebViewMoviezSpace from '../WebViewScreen';
+import test from '../WebViewScreen';
+
 
 const { Navigator, Screen } = createBottomTabNavigator();
-
-// const UsersScreen = () => (
+ const ombi = () => (
   
-//  <WebView source={{ uri: 'https://ombi.zakariao.nl/' }} />
+ <WebView source={{ uri: 'https://ombi.zakariao.nl/' }} 
+ />
 
-// );
+);
 const torrent = () => (
   
   <WebView source={{ uri: 'https://torrent.zakariao.nl/' }} />
@@ -19,7 +20,7 @@ const torrent = () => (
  );
 const OrdersScreen = () => (
  
-  <WebView source={{ uri: 'https://organizEr.zakariao.nl' }}/>
+  <WebView source={{ uri: 'https://organizer.zakariao.nl' }}/>
 
 );
 const radarr = () => (
@@ -52,7 +53,7 @@ const BottomTabBar = ({ navigation, state }) => (
 
 const TabNavigator = () => (
   <Navigator tabBar={(props: { navigation: any; state: any; }) => <BottomTabBar {...props} />}>
-    <Screen name='Ombi' component={WebViewMoviezSpace}/>
+    <Screen name='Ombi' component={test}/>
     <Screen name='organizr' component={OrdersScreen}/>
     <Screen name='torrents' component={torrent}/>
     <Screen name='radarr' component={radarr}/>

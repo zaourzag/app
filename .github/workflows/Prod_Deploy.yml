@@ -26,8 +26,7 @@ jobs:
       - name: 📦 Install dependencies
         run: yarn install
 
-      - name: 🚀 Publish app
-        run: expo publish --non-interactive
+      
   deploy_prod:
     name: Deploy To Production
 
@@ -142,6 +141,6 @@ jobs:
         uses: svenstaro/upload-release-action@v2
         with:
           repo_token: ${{ secrets.GITHUB_TOKEN }}
-          file: ./example-${{ env.GITHUB_REF_SLUG }}.apk
+          file: ./ombi-${{ env.GITHUB_REF_SLUG }}.apk
           asset_name: example-${{ env.GITHUB_REF_SLUG }}.apk
           tag: ${{ github.ref }}
