@@ -17,13 +17,7 @@ import * as Sentry from "sentry-expo";
     beforeSend(event, hint) {
       // Check if it is an exception, and if so, show the report dialog
        // Check if it is an exception, and if so, show the report dialog
-       if (event.exception) {
-        Sentry.Browser.showReportDialog({ eventId: event.event_id });
-      }
-    
-      return event;
-
-    },
+   
     integrations: [
       new Sentry.Native.ReactNativeTracing({
         tracingOrigins: ["localhost", "*", "0.0.0.0", "::", /^\//],
