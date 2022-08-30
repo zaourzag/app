@@ -60,6 +60,7 @@ const BottomTabBar = ({ navigation, state }) => (
     <BottomNavigationTab title='ombi'/>
     <BottomNavigationTab title='Organizr'/>
     <BottomNavigationTab title='torrent'/>
+    <BottomNavigationTab title='torrent-2'/>
     <BottomNavigationTab title='radarr'/>
     <BottomNavigationTab title='sonarr'/>
     <BottomNavigationTab title='jackett'  />
