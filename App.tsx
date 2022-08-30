@@ -20,7 +20,7 @@ import * as Sentry from "sentry-expo";
    
     integrations: [
       new Sentry.Native.ReactNativeTracing({
-        tracingOrigins: ["localhost", "*", "0.0.0.0", "::", /^\//],
+       
         // ... other options
       }),
     ],

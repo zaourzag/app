@@ -18,6 +18,11 @@ const torrent = () => (
   <WebView source={{ uri: 'https://torrent.zakariao.nl/' }} />
  
  );
+ const torrent2 = () => (
+  
+  <WebView source={{ uri: 'https://torrent-2.zakariao.nl/' }} />
+ 
+ );
 const OrdersScreen = () => (
  
   <WebView source={{ uri: 'https://organizer.zakariao.nl' }}/>
@@ -38,6 +43,16 @@ const radarr = () => (
   <WebView source={{ uri: 'https://jackett.zakariao.nl/' }} />
  
  );
+ const bazarr = () => (
+  
+  <WebView source={{ uri: 'https://bazarr.zakariao.nl/' }} />
+ 
+ );
+ const nzb = () => (
+  
+  <WebView source={{ uri: 'https://hydra.zakariao.nl/' }} />
+ 
+ );
 const BottomTabBar = ({ navigation, state }) => (
   <BottomNavigation
     selectedIndex={state.index}
@@ -48,17 +63,22 @@ const BottomTabBar = ({ navigation, state }) => (
     <BottomNavigationTab title='radarr'/>
     <BottomNavigationTab title='sonarr'/>
     <BottomNavigationTab title='jackett'  />
+    <BottomNavigationTab title='hydra'  />
+    <BottomNavigationTab title='bazarr'  />
   </BottomNavigation>
 );
 
 const TabNavigator = () => (
   <Navigator tabBar={(props: { navigation: any; state: any; }) => <BottomTabBar {...props} />}>
-    <Screen name='Ombi' component={test}/>
+    <Screen name='Ombi' component={ombi}/>
     <Screen name='organizr' component={OrdersScreen}/>
     <Screen name='torrents' component={torrent}/>
+    <Screen name='torrents-2' component={torrent2}/>
     <Screen name='radarr' component={radarr}/>
     <Screen name='sonarr' component={sonarr}/>
     <Screen name='jackett' component={jackett}/>
+    <Screen name='hydra' component={nzb}/>
+    <Screen name='bazarr' component={bazarr}/>
   </Navigator>
 );
 
