@@ -14,7 +14,7 @@ import * as Sentry from "sentry-expo";
     environment: "production",
     sessionTrackingIntervalMillis: 10000,
     tracesSampleRate: 1.0,
-    beforeSend(event, hint) {
+  
       // Check if it is an exception, and if so, show the report dialog
        // Check if it is an exception, and if so, show the report dialog
    
@@ -25,6 +25,7 @@ import * as Sentry from "sentry-expo";
       }),
     ],
   });
+
 
 // });
 export default () => (
