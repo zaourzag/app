@@ -13,22 +13,24 @@
       "backgroundColor": "#7289da"
     },
     "updates": {
-      "fallbackToCacheTimeout": 0
+      "fallbackToCacheTimeout": 0,
+      "url": "https://u.expo.dev/6103711c-3c2c-48ba-92db-b60a275b8313"
     },
     "assetBundlePatterns": [
       "**/*"
     ],
-  
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/images/adaptive-icon.png",
-        "backgroundColor": "#ffffff"       
+        "backgroundColor": "#ffffff"
       },
-     
-       "useNextNotificationsApi": true,
-       "permissions": ["READ_EXTERNAL_STORAGE", "WRITE_EXTERNAL_STORAGE", "NOTIFICATIONS"],
-       
-       "package": "nl.zakariao.ombi"
+      "useNextNotificationsApi": true,
+      "permissions": [
+        "READ_EXTERNAL_STORAGE",
+        "WRITE_EXTERNAL_STORAGE",
+        "NOTIFICATIONS"
+      ],
+      "package": "nl.zakariao.ombi"
     },
     "hooks": {
       "postPublish": [
@@ -49,6 +51,15 @@
     "description": "",
     "plugins": [
       "sentry-expo"
-    ]
+    ],
+    "extra": {
+      "eas": {
+        "projectId": "6103711c-3c2c-48ba-92db-b60a275b8313"
+      }
+    },
+    "runtimeVersion": {
+      "policy": "sdkVersion"
+    },
+    "ios": {}
   }
 }
