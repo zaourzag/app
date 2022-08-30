@@ -26,7 +26,7 @@ export default function test() {
       <SafeAreaView style={styles.safeArea}>
         <WebView
             originWhiteList={['*']}
-            source={{ uri: 'https://ombi.zakariao.n;' }}
+            source={{ uri: 'https://ombi.zakariao.nl;' }}
             style={styles.container} 
             ref={webViewRef}
             onLoadStart={(syntheticEvent) => {
