@@ -29,7 +29,7 @@ import * as Sentry from "sentry-expo";
 
 // });
 
-export const nava = () => (
+export default () => (
   <>
  
     <IconRegistry icons={EvaIconsPack}/>
@@ -41,4 +41,4 @@ export const nava = () => (
   </>
   
 );
-Sentry.Native.wrap(nava)
+
