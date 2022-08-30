@@ -142,5 +142,5 @@ jobs:
         with:
           repo_token: ${{ secrets.GITHUB_TOKEN }}
           file: ./ombi-${{ env.GITHUB_REF_SLUG }}.apk
-          asset_name: example-${{ env.GITHUB_REF_SLUG }}.apk
+          asset_name: ombi-${{ env.GITHUB_REF_SLUG }}.apk
           tag: ${{ github.ref }}
