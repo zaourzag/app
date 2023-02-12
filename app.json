@@ -2,7 +2,7 @@
   "expo": {
     "name": "ombi client zakaria",
     "slug": "nl-zakariao-ombi",
-    "version": "2.4.4",
+    "version": "2.4.5",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
     "scheme": "myapp",
@@ -14,7 +14,7 @@
     },
     "updates": {
       "fallbackToCacheTimeout": 0,
-      // "url": "https://u.expo.dev/6103711c-3c2c-48ba-92db-b60a275b8313"
+      "url": "https://u.expo.dev/6103711c-3c2c-48ba-92db-b60a275b8313"
     },
     "assetBundlePatterns": [
       "**/*"
@@ -41,7 +41,7 @@
             "setCommits": true,
             "project": "ombi",
             "url": "https://sentry.zakariao.nl",
-            "authToken": "474c9387a0c14d2d9de20fd9dd6d337b0b45d5426677422085f563691086a2d3"
+            "authToken": "e98c33d55fa44be2906f9de6a29f613fd38e47a8f57749ecb151e674b8444d1f"
           }                                                                               
         }
       ]
@@ -53,14 +53,14 @@
     "plugins": [
       "sentry-expo"
     ],
-    // "extra": {
-    //   "eas": {
-    //     "projectId": "6103711c-3c2c-48ba-92db-b60a275b8313"
-    //   }
-    // },
-    // "runtimeVersion": {
-    //   "policy": "sdkVersion"
-    // },
+    "extra": {
+      "eas": {
+        "projectId": "6103711c-3c2c-48ba-92db-b60a275b8313"
+      }
+    },
+    "runtimeVersion": {
+      "policy": "sdkVersion"
+    },
     "ios": {}
   }
 }
