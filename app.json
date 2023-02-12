@@ -14,7 +14,7 @@
     },
     "updates": {
       "fallbackToCacheTimeout": 0,
-      "url": "https://u.expo.dev/6103711c-3c2c-48ba-92db-b60a275b8313"
+      // "url": "https://u.expo.dev/6103711c-3c2c-48ba-92db-b60a275b8313"
     },
     "assetBundlePatterns": [
       "**/*"
@@ -53,14 +53,14 @@
     "plugins": [
       "sentry-expo"
     ],
-    "extra": {
-      "eas": {
-        "projectId": "6103711c-3c2c-48ba-92db-b60a275b8313"
-      }
-    },
-    "runtimeVersion": {
-      "policy": "sdkVersion"
-    },
+    // "extra": {
+    //   "eas": {
+    //     "projectId": "6103711c-3c2c-48ba-92db-b60a275b8313"
+    //   }
+    // },
+    // "runtimeVersion": {
+    //   "policy": "sdkVersion"
+    // },
     "ios": {}
   }
 }
