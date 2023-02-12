@@ -7,48 +7,48 @@ import test from '../WebViewScreen';
 
 
 const { Navigator, Screen } = createBottomTabNavigator();
- const ombi = () => (
+ const Ombi = () => (
   
  <WebView source={{ uri: 'https://ombi.zakariao.nl/' }} 
  />
 
 );
-const torrent = () => (
+const Torrent = () => (
   
   <WebView source={{ uri: 'https://torrent.zakariao.nl/' }} />
  
  );
- const torrent2 = () => (
+ const Torrent2 = () => (
   
   <WebView source={{ uri: 'https://torrent-2.zakariao.nl/' }} />
  
  );
-const OrdersScreen = () => (
+const Organizr = () => (
  
   <WebView source={{ uri: 'https://organizer.zakariao.nl' }}/>
 
 );
-const radarr = () => (
+const Radarr = () => (
   
   <WebView source={{ uri: 'https://radar.zakariao.nl/' }} />
  
  );
- const sonarr = () => (
+ const Sonarr = () => (
   
   <WebView source={{ uri: 'https://sonar.zakariao.nl/' }} />
  
  );
- const jackett = () => (
+ const Jackett = () => (
   
   <WebView source={{ uri: 'https://jackett.zakariao.nl/' }} />
  
  );
- const bazarr = () => (
+ const Bazarr = () => (
   
   <WebView source={{ uri: 'https://bazarr.zakariao.nl/' }} />
  
  );
- const nzb = () => (
+ const Nzb = () => (
   
   <WebView source={{ uri: 'https://hydra.zakariao.nl/' }} />
  
@@ -57,29 +57,29 @@ const BottomTabBar = ({ navigation, state }) => (
   <BottomNavigation
     selectedIndex={state.index}
     onSelect={index => navigation.navigate(state.routeNames[index])}>
-    <BottomNavigationTab title='ombi'/>
+    <BottomNavigationTab title='Ombi'/>
     <BottomNavigationTab title='Organizr'/>
-    <BottomNavigationTab title='torrent'/>
-    <BottomNavigationTab title='torrent-2'/>
-    <BottomNavigationTab title='radarr'/>
-    <BottomNavigationTab title='sonarr'/>
-    <BottomNavigationTab title='jackett'  />
-    <BottomNavigationTab title='hydra'  />
-    <BottomNavigationTab title='bazarr'  />
+    <BottomNavigationTab title='Torrent'/>
+    <BottomNavigationTab title='Torrent-2'/>
+    <BottomNavigationTab title='Radarr'/>
+    <BottomNavigationTab title='Sonarr'/>
+    <BottomNavigationTab title='Jackett'  />
+    <BottomNavigationTab title='Hydra'  />
+    <BottomNavigationTab title='Bazarr'  />
   </BottomNavigation>
 );
 
 const TabNavigator = () => (
   <Navigator tabBar={(props: { navigation: any; state: any; }) => <BottomTabBar {...props} />}>
-    <Screen name='Ombi' component={ombi}/>
-    <Screen name='organizr' component={OrdersScreen}/>
-    <Screen name='torrents' component={torrent}/>
-    <Screen name='torrents-2' component={torrent2}/>
-    <Screen name='radarr' component={radarr}/>
-    <Screen name='sonarr' component={sonarr}/>
-    <Screen name='jackett' component={jackett}/>
-    <Screen name='hydra' component={nzb}/>
-    <Screen name='bazarr' component={bazarr}/>
+    <Screen name='Ombi' component={Ombi}/>
+    <Screen name='organizr' component={Organizr}/>
+    <Screen name='torrents' component={Torrent}/>
+    <Screen name='torrents-2' component={Torrent2}/>
+    <Screen name='radarr' component={Radarr}/>
+    <Screen name='sonarr' component={Sonarr}/>
+    <Screen name='jackett' component={Jackett}/>
+    <Screen name='hydra' component={Nzb}/>
+    <Screen name='bazarr' component={Bazarr}/>
   </Navigator>
 );
 
