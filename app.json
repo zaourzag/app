@@ -37,11 +37,12 @@
         {
           "file": "sentry-expo/upload-sourcemaps",
           "config": {
-            "organization": "zakaria-aourzag",
+            "organization": "sentry",
             "setCommits": true,
             "project": "ombi",
-            "authToken": "66a9b6a0b221487babb74d4d2c3c8d2fa42178dbf26a45fda7eb993e9c807b24"
-          }
+            "url": "https://sentry.zakariao.nl",
+            "authToken": "474c9387a0c14d2d9de20fd9dd6d337b0b45d5426677422085f563691086a2d3"
+          }                                                                               
         }
       ]
     },
