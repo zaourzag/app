@@ -1,19 +1,51 @@
-const createExpoWebpackConfigAsync = require('@expo/webpack-config');
-const path = require('path')
+// Generated using webpack-cli https://github.com/webpack/webpack-cli
 
-module.exports = async function(env, argv) {
-    const config = await createExpoWebpackConfigAsync(env, argv);
-    config.module.rules.forEach(r => {
-        if (r.oneOf) {
-            r.oneOf.forEach(o => {
-                if (o.use && o.use.loader && o.use.loader.includes('babel-loader')) {
-                    o.include = [
-                        path.resolve('.'),
-                        path.resolve('node_modules/@ui-kitten/components'),
-                    ]
-                }
-            })
-        }
-    })
+const path = require('path');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const WorkboxWebpackPlugin = require('workbox-webpack-plugin');
+
+const isProduction = process.env.NODE_ENV == 'production';
+
+
+const config = {
+    entry: './index.js',
+    output: {
+        path: path.resolve(__dirname, 'dist'),
+    },
+    devServer: {
+        open: true,
+        host: 'localhost',
+    },
+    plugins: [
+        new HtmlWebpackPlugin({
+            template: 'index.html',
+        }),
+
+        // Add your plugins here
+        // Learn more about plugins from https://webpack.js.org/configuration/plugins/
+    ],
+    module: {
+        rules: [
+            {
+                test: /\.(eot|svg|ttf|woff|woff2|png|jpg|gif)$/i,
+                type: 'asset',
+            },
+
+            // Add your rules for custom modules here
+            // Learn more about loaders from https://webpack.js.org/loaders/
+        ],
+    },
+};
+
+module.exports = () => {
+    if (isProduction) {
+        config.mode = 'production';
+        
+        
+        config.plugins.push(new WorkboxWebpackPlugin.GenerateSW());
+        
+    } else {
+        config.mode = 'development';
+    }
     return config;
 };
