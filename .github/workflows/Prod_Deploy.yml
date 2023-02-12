@@ -127,7 +127,7 @@ jobs:
           APP_BUILD_VERSION: ${{ github.run_number }}
           APP_BINARY_VERSION: ${{ needs.deploy_prod.outputs.latestBinaryVersion }}
         run: |
-          expo build:android --release-channel=${{ needs.deploy_prod.outputs.releaseChannel }} > buildLogAndroid.txt
+          expo build:android --release-channel=${{ needs.deploy_prod.outputs.releaseChannel }} -t apk > buildLogAndroid.txt
           cat buildLogAndroid.txt
       - name: Parse Asset URL
         id: androidUrl
