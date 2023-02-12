@@ -7,7 +7,7 @@ import * as Sentry from "sentry-expo";
 // Sentry.init({
 
   Sentry.init({
-    dsn: "https://3ac43dfc5bb7435db4b0815aacbed0e7@o1296783.ingest.sentry.io/6558455",
+    dsn: "https://95966da8d48141bebcde31d0f3d5c306@sentry.zakariao.nl/3",
     // Set tracesSampleRate to 1.0 to capture 100% of transactions for performance monitoring.
     // We recommend adjusting this value in production.
     enableAutoSessionTracking: true,
@@ -25,11 +25,11 @@ import * as Sentry from "sentry-expo";
       }),
     ],
   });
-
+Sentry.nativeCrash()
 
 // });
 
-export default () => (
+export default Sentry.wrap () => (
   <>
  
     <IconRegistry icons={EvaIconsPack}/>
