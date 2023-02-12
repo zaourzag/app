@@ -4,6 +4,8 @@ import { ApplicationProvider, IconRegistry } from '@ui-kitten/components';
 import { EvaIconsPack } from '@ui-kitten/eva-icons';
 import { AppNavigator } from './navigation/index'
 import * as Sentry from "sentry-expo";
+const routingInstrumentation = new Sentry.ReactNavigationInstrumentation();
+
 // Sentry.init({
 
   Sentry.init({
@@ -20,16 +22,18 @@ import * as Sentry from "sentry-expo";
    
     integrations: [
       new Sentry.Native.ReactNativeTracing({
-       
-        // ... other options
+        routingInstrumentation: new Sentry.ReactNativeNavigationInstrumentation(
+          AppNavigator,
+        )
+  
       }),
     ],
   });
-Sentry.nativeCrash()
+
 
 // });
 
-export default Sentry.wrap () => (
+export default Sentry.wrap(
   <>
  
     <IconRegistry icons={EvaIconsPack}/>
