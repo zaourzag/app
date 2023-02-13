@@ -5,6 +5,7 @@ import { EvaIconsPack } from '@ui-kitten/eva-icons';
 import { AppNavigator } from './navigation/index'
 import { Sentry } from 'sentry';
 import { Navigation } from "@react-navigation/bottom-tabs"
+// const { Navigation} = require('@react-navigation/bottom-tabs')
 Sentry.init({
   dsn: "https://95966da8d48141bebcde31d0f3d5c306@sentry.zakariao.nl/3",
   // Set tracesSampleRate to 1.0 to capture 100% of transactions for performance monitoring.
