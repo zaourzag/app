@@ -3,7 +3,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { BottomNavigation, BottomNavigationTab, Layout, Text } from '@ui-kitten/components';
 import { WebView } from 'react-native-webview';
-import test from '../WebViewScreen';
+import * as Sentry from 'sentry-expo';
 
 
 const { Navigator, Screen } = createBottomTabNavigator();
@@ -52,6 +52,13 @@ const Radarr = () => (
   
   <WebView source={{ uri: 'https://hydra.zakariao.nl/' }} />
  
+ );
+
+ const Test = () => (
+  
+  <WebView source={{ uri: 'https://hydra.zakariao.nl/' }
+Sentry.Native.nativeCrash} />
+   
  );
 const BottomTabBar = ({ navigation, state }) => (
   <BottomNavigation
