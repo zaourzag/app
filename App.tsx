@@ -7,7 +7,7 @@ import { Sentry } from 'sentry';
 import { Navigation } from "@react-navigation/bottom-tabs"
 // const { Navigation} = require('@react-navigation/bottom-tabs')
 Sentry.init({
-  dsn: "https://95966da8d48141bebcde31d0f3d5c306@sentry.zakariao.nl/3",
+  dsn: "https://3ac43dfc5bb7435db4b0815aacbed0e7@o1296783.ingest.sentry.io/6558455",
   // Set tracesSampleRate to 1.0 to capture 100% of transactions for performance monitoring.
   // We recommend adjusting this value in production.
   enableAutoSessionTracking: true,
