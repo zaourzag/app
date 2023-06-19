@@ -3,7 +3,7 @@ import * as eva from '@eva-design/eva';
 import { ApplicationProvider, IconRegistry } from '@ui-kitten/components';
 import { EvaIconsPack } from '@ui-kitten/eva-icons';
 import { AppNavigator } from './navigation/index'
-import { Sentry } from 'sentry';
+import * as Sentry from 'sentry-expo';
 import { Navigation } from "@react-navigation/bottom-tabs"
 // const { Navigation} = require('@react-navigation/bottom-tabs')
 Sentry.init({
