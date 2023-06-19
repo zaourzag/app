@@ -19,7 +19,7 @@ Sentry.init({
   beforeSend(event, hint) {
       // Check if it is an exception, and if so, show the report dialog
       if (event.exception) {
-          Sentry.Browser  .showReportDialog({ eventId: event.event_id, title: "well dang looks like we got ourselves a problem mateyy" });
+          Sentry.Browser.showReportDialog({ eventId: event.event_id, title: "well dang looks like we got ourselves a problem mateyy" });
       }
       return event;
   },
@@ -36,18 +36,17 @@ Sentry.init({
   ],
 });
 
-// });
-
-export default () => (
+const app = () => (
   <>
  
-    <IconRegistry icons={EvaIconsPack}/>
-    <ApplicationProvider {...eva} theme={eva.dark}>
-      <AppNavigator/>
-    </ApplicationProvider>
-    
-
-  </>
+  <IconRegistry icons={EvaIconsPack}/>
+  <ApplicationProvider {...eva} theme={eva.dark}>
+    <AppNavigator/>
+  </ApplicationProvider>
   
-);
 
+</>
+
+)
+export default Sentry.Native.wrap(app)
+  

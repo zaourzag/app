@@ -44,7 +44,7 @@
             "setCommits": true,
             "project": "ombi",
             "authToken": "66a9b6a0b221487babb74d4d2c3c8d2fa42178dbf26a45fda7eb993e9c807b24"
-          }                                                                               
+          }
         }
       ]
     },
@@ -63,6 +63,8 @@
     "runtimeVersion": {
       "policy": "sdkVersion"
     },
-    "ios": {}
+    "ios": {
+      "bundleIdentifier": "nl.zakariao.ombi"
+    }
   }
 }
