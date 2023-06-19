@@ -14,6 +14,9 @@
     },
     "updates": {
       "fallbackToCacheTimeout": 0,
+      "requestHeaders": {
+        "expo-channel-name": "master"
+      },
       "url": "https://u.expo.dev/6103711c-3c2c-48ba-92db-b60a275b8313"
     },
     "assetBundlePatterns": [
