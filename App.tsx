@@ -36,17 +36,14 @@ Sentry.init({
   ],
 });
 
-const app = () => (
-  <>
- 
+function app() {
+return( 
+<>
   <IconRegistry icons={EvaIconsPack}/>
   <ApplicationProvider {...eva} theme={eva.dark}>
     <AppNavigator/>
   </ApplicationProvider>
-  
-
-</>
-
-)
-export default Sentry.Native.wrap(app)
+</>);
+}
+export default Sentry.Native.wrap(app);
   
