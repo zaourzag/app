@@ -78,3 +78,8 @@ dist/
 # @end expo-cli
 .gitsecret/keys/random_seed
 !*.secret
+
+git-secret.key
+ # git-secret
+fuck.txt
+!/.git-secret/**

@@ -54,12 +54,7 @@ const Radarr = () => (
  
  );
 
- const Test = () => (
-  
-  <WebView source={{ uri: 'https://hydra.zakariao.nl/' }
-Sentry.Native.nativeCrash} />
-   
- );
+
 const BottomTabBar = ({ navigation, state }) => (
   <BottomNavigation
     selectedIndex={state.index}

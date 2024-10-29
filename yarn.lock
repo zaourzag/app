@@ -11903,6 +11903,7 @@ react-test-renderer@~18.1.0:
     scheduler "^0.22.0"
 
 react@18.1.0:
+
   version "18.1.0"
   resolved "https://registry.npmjs.org/react/-/react-18.1.0.tgz"
   integrity sha512-4oL8ivCz5ZEPyclFQXaNksK3adutVS8l2xzZU0cqEFrE9Sb7fC0EFK5uEk74wIreL1DERyjvsU915j1pcT2uEQ==
@@ -12415,12 +12416,15 @@ saxes@^5.0.1:
   dependencies:
     xmlchars "^2.2.0"
 
-scheduler@^0.22.0:
-  version "0.22.0"
-  resolved "https://registry.npmjs.org/scheduler/-/scheduler-0.22.0.tgz"
-  integrity sha512-6QAm1BgQI88NPYymgGQLCZgvep4FyePDWFpXVK+zNSUgHwlqpJy8VEh8Et0KxTACS4VWwMousBElAZOH9nkkoQ==
+
+
+schedule@^0.3.0:
+  version "0.3.0"
+  resolved "https://registry.npmjs.org/schedule/-/schedule-0.3.0.tgz"
+  integrity sha512-20+1KVo517sR7Nt+bYBN8a+bEJDKLPEx7Ohtts1kX05E4/HY53YUNuhfkVNItmWAnBYHcpG9vsd2/CJxG+aPCQ==
   dependencies:
-    loose-envify "^1.1.0"
+    object-assign "^4.1.1"
+
 
 schema-utils@^1.0.0:
   version "1.0.0"

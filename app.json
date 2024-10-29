@@ -14,6 +14,9 @@
     },
     "updates": {
       "fallbackToCacheTimeout": 0,
+      "requestHeaders": {
+        "expo-channel-name": "master"
+      },
       "url": "https://u.expo.dev/6103711c-3c2c-48ba-92db-b60a275b8313"
     },
     "assetBundlePatterns": [
@@ -37,12 +40,11 @@
         {
           "file": "sentry-expo/upload-sourcemaps",
           "config": {
-            "organization": "sentry",
+            "organization": "zakaria-aourzag",
             "setCommits": true,
             "project": "ombi",
-            "url": "https://sentry.zakariao.nl",
-            "authToken": "e98c33d55fa44be2906f9de6a29f613fd38e47a8f57749ecb151e674b8444d1f"
-          }                                                                               
+            "authToken": "66a9b6a0b221487babb74d4d2c3c8d2fa42178dbf26a45fda7eb993e9c807b24"
+          }
         }
       ]
     },
@@ -61,6 +63,8 @@
     "runtimeVersion": {
       "policy": "sdkVersion"
     },
-    "ios": {}
+    "ios": {
+      "bundleIdentifier": "nl.zakariao.ombi"
+    }
   }
 }
