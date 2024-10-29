@@ -40,7 +40,7 @@ const Radarr = () => (
  );
  const Jackett = () => (
   
-  <WebView source={{ uri: 'https://jackett.zakariao.nl/' }} />
+  <WebView source={{ uri: 'https://prow.zakariao.nl/' }} />
  
  );
  const Bazarr = () => (
